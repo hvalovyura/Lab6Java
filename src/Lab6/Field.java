@@ -23,4 +23,14 @@ public class Field extends JFrame
         setBackground(Color.WHITE);
         repaintTimer.start();
     }
+
+    public void painComponent(Graphics g)
+    {
+        super.paintComponents(g);
+        Graphics2D canvas = (Graphics2D) g;
+        for(BouncingBall ball: balls)
+        {
+            ball.paint(canvas);
+        }
+    }
 }
