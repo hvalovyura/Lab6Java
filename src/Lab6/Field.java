@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Field extends JFrame
+public class Field extends JPanel
 {
     private ArrayList<BouncingBall> balls = new ArrayList<BouncingBall>(10);
 
