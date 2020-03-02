@@ -1,8 +1,13 @@
 package Lab6;
 
-public class MainFrame {
+import javax.swing.*;
+
+public class MainFrame extends JFrame
+{
     public static void main(String[] args)
     {
-        System.out.println("qq");
+        MainFrame frame = new MainFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
