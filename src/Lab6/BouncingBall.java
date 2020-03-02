@@ -5,6 +5,8 @@ import java.awt.geom.Ellipse2D;
 
 public class BouncingBall implements Runnable
 {
+    
+
     public void BouncingBall(Field field)
     {
         this.field = field;
@@ -33,11 +35,45 @@ public class BouncingBall implements Runnable
         canvas.fill(ball);
     }
 
-    
-
     @Override
     public void run()
     {
+        try
+        {
+            while(true)
+            {
+                field.canMove(this);
+                if(x + speedX <= radius)
+                {
+                    speedX = -speedX;
+                    x = radius;
+                }
+                else if(x + speedX >= field.getWidth() - radius)
+                {
+                    speedX = -speedX;
+                    x = new Double(field.getWidth() - radius).intValue();
+                }
+                else if(y + speedY <= radius)
+                {
+                    speedY = -speedY;
+                    y = radius;
+                }
+                else if(y + speedY >= field.getHeight() - radius)
+                {
+                    speedY = -speedY;
+                    y = new Double(field.getHeight() - radius).intValue();
+                }
+                else
+                {
+                    x += speedX;
+                    y += speedY;
+                }
+                Thread.sleep(16 - speed);
+            }
+        }
+        catch (InterruptedException ex)
+        {
 
+        }
     }
 }
