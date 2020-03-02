@@ -20,7 +20,7 @@ public class BouncingBall implements Runnable
     private double speedX;
     private double speedY;
 
-    public void BouncingBall(Field field)
+    public BouncingBall(Field field)
     {
         this.field = field;
         radius = new Double(Math.random()* (MAX_RADIUS - MIN_RADIUS)).intValue() + MIN_RADIUS;
