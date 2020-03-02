@@ -24,6 +24,11 @@ public class Field extends JFrame
         repaintTimer.start();
     }
 
+    public void addBall()
+    {
+        balls.add(new BouncingBall(this));
+    }
+
     public void painComponent(Graphics g)
     {
         super.paintComponents(g);
@@ -33,4 +38,24 @@ public class Field extends JFrame
             ball.paint(canvas);
         }
     }
+
+    public synchronized void pause()
+    {
+        paused = true;
+    }
+
+    public synchronized void canMove(BouncingBall ball) throws InterruptedException
+    {
+        if(paused)
+        {
+            wait();
+        }
+    }
+
+    public synchronized void resume()
+    {
+        paused = false;
+        notifyAll();
+    }
+
 }
