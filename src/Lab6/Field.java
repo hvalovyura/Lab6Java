@@ -23,7 +23,6 @@ public class Field extends JPanel
     {
         setBackground(Color.WHITE);
         repaintTimer.start();
-        addMouseMotionListener(new MouseMotionHandler());
         addMouseListener(new MouseHandler());
     }
 
@@ -100,25 +99,11 @@ public class Field extends JPanel
                 {
                     if (ball.x <= xStart + ball.radius && ball.x >= xStart - ball.radius && ball.y <= yStart + ball.radius && ball.y >= yStart - ball.radius)
                     {
-                        ball.setSpeedX(0);
-                        ball.setSpeedY(0);
+                        ball.setSpeedX((xEnd - xStart)/totalTime*2);
+                        ball.setSpeedY((yEnd - yStart)/totalTime*2);
                     }
                 }
             }
-        }
-    }
-
-    public class MouseMotionHandler implements MouseMotionListener
-    {
-
-        @Override
-        public void mouseDragged(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseMoved(MouseEvent e) {
-
         }
     }
 
