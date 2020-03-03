@@ -3,6 +3,7 @@ package Lab6;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.Ellipse2D;
 
 public class BouncingBall implements Runnable
@@ -106,6 +107,20 @@ public class BouncingBall implements Runnable
 
         public void mouseReleased(MouseEvent ev)
         {
+
+        }
+    }
+
+    public class MouseMotionHandler implements MouseMotionListener
+    {
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
 
         }
     }
