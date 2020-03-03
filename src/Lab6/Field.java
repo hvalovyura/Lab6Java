@@ -96,6 +96,14 @@ public class Field extends JPanel
                 endTime = System.currentTimeMillis();
                 totalTime = endTime - startTime;
                 resume();
+                for(BouncingBall ball : balls)
+                {
+                    if (ball.x <= xStart + ball.radius && ball.x >= xStart - ball.radius && ball.y <= yStart + ball.radius && ball.y >= yStart - ball.radius)
+                    {
+                        ball.setSpeedX(0);
+                        ball.setSpeedY(0);
+                    }
+                }
             }
         }
     }

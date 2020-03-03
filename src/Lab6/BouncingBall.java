@@ -13,15 +13,23 @@ public class BouncingBall implements Runnable
     private static final int MAX_SPEED = 15;
 
     private Field field;
-    private int radius;
+    public int radius;
     private Color color;
 
-    private double x;
-    private double y;
+    public double x;
+    public double y;
 
     private int speed;
     private double speedX;
     private double speedY;
+
+    public void setSpeedX(double speedX) {
+        this.speedX = speedX;
+    }
+
+    public void setSpeedY(double speedY) {
+        this.speedY = speedY;
+    }
 
     public BouncingBall(Field field)
     {
