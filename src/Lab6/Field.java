@@ -61,6 +61,14 @@ public class Field extends JPanel
         notifyAll();
     }
 
+    private double xStart;
+    private double yStart;
+    private double xEnd;
+    private double yEnd;
+    private double startTime;
+    private double endTime;
+    private double totalTime;
+
     public class MouseHandler extends MouseAdapter
     {
         public void mouseClicked(MouseEvent ev)
@@ -72,7 +80,10 @@ public class Field extends JPanel
         {
             if(ev.getButton() == 1)
             {
-                paused = true;
+                pause();
+                xStart = ev.getX();
+                yStart = ev.getY();
+                startTime = System.currentTimeMillis();
             }
         }
 
@@ -80,6 +91,10 @@ public class Field extends JPanel
         {
             if(ev.getButton() == 1)
             {
+                xEnd = ev.getX();
+                yEnd = ev.getY();
+                endTime = System.currentTimeMillis();
+                totalTime = endTime - startTime;
                 resume();
             }
         }
