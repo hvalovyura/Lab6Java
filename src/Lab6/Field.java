@@ -2,8 +2,7 @@ package Lab6;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 @SuppressWarnings("serial")
@@ -24,6 +23,8 @@ public class Field extends JPanel
     {
         setBackground(Color.WHITE);
         repaintTimer.start();
+        addMouseMotionListener(new MouseMotionHandler());
+        addMouseListener(new MouseHandler());
     }
 
     public void addBall()
@@ -58,6 +59,44 @@ public class Field extends JPanel
     {
         paused = false;
         notifyAll();
+    }
+
+    public class MouseHandler extends MouseAdapter
+    {
+        public void mouseClicked(MouseEvent ev)
+        {
+
+        }
+
+        public void mousePressed(MouseEvent ev)
+        {
+            if(ev.getButton() == 1)
+            {
+                paused = true;
+            }
+        }
+
+        public void mouseReleased(MouseEvent ev)
+        {
+            if(ev.getButton() == 1)
+            {
+                resume();
+            }
+        }
+    }
+
+    public class MouseMotionHandler implements MouseMotionListener
+    {
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+
+        }
     }
 
 }

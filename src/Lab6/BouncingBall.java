@@ -92,36 +92,4 @@ public class BouncingBall implements Runnable
 
         }
     }
-
-    public class MouseHandler extends MouseAdapter
-    {
-        public void mouseClicked(MouseEvent ev)
-        {
-
-        }
-
-        public void mousePressed(MouseEvent ev)
-        {
-
-        }
-
-        public void mouseReleased(MouseEvent ev)
-        {
-
-        }
-    }
-
-    public class MouseMotionHandler implements MouseMotionListener
-    {
-
-        @Override
-        public void mouseDragged(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseMoved(MouseEvent e) {
-
-        }
-    }
 }
