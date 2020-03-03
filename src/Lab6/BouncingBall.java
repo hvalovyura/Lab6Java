@@ -1,6 +1,8 @@
 package Lab6;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
 
 public class BouncingBall implements Runnable
@@ -85,6 +87,24 @@ public class BouncingBall implements Runnable
             }
         }
         catch (InterruptedException ex)
+        {
+
+        }
+    }
+
+    public class MouseHandler extends MouseAdapter
+    {
+        public void mouseClicked(MouseEvent ev)
+        {
+
+        }
+
+        public void mousePressed(MouseEvent ev)
+        {
+
+        }
+
+        public void mouseReleased(MouseEvent ev)
         {
 
         }
