@@ -15,7 +15,7 @@ public class Field extends JPanel
 
     private Timer repaintTimer = new Timer(10, new ActionListener() {
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent ev) {
             repaint();
         }
     });
@@ -31,9 +31,9 @@ public class Field extends JPanel
         balls.add(new BouncingBall(this));
     }
 
-    public void painComponent(Graphics g)
+    public void paintComponent(Graphics g)
     {
-        super.paintComponents(g);
+        super.paintComponent(g);
         Graphics2D canvas = (Graphics2D) g;
         for(BouncingBall ball: balls)
         {

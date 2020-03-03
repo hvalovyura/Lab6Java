@@ -29,7 +29,8 @@ public class MainFrame extends JFrame
         {
             public void actionPerformed(ActionEvent event) {
                 field.addBall();
-                if (!pauseMenuItem.isEnabled() && !resumeMenuItem.isEnabled()) {
+                if (!pauseMenuItem.isEnabled() && !resumeMenuItem.isEnabled())
+                {
                     pauseMenuItem.setEnabled(true);
                 }
             }
